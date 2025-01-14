@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="left-nav-links">
+                <a href="../index.html" class="navbar-tags">JONATHAN KIM</a>
+            </div>
+            <div class="right-nav-links">
+                <a href="../index.html#experience-title" class="navbar-tags">EXPERIENCE</a>
+                <a href="../index.html#project-title" class="navbar-tags">PROJECTS</a>
+                <a href="../index.html#about-target" class="navbar-tags">ABOUT</a>
+                <a href="../imgs/JonathanKimResume.pdf" class="navbar-tags" target="_blank">RESUME</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="incard-pic-and-summary">
+                <div class="incard-pic">
+                    <img src="../imgs/NYT.jpg" alt="Stock image of News Article" class="incard-picture">
+                </div>
+                <div class="incard-summary">
+                    <h2>Sentiment Analysis</h2>
+                    <h3>Title: </h3> <h4>Python Developer</h4>
+                    <br>
+                    <h3>Date: </h3> <h4>Spring 2024</h4>
+                    <br>
+                    <h3>Skills: </h3> <h4>Python, Data Science, Data Visualization</h4>
+                    <br>
+                    <br>
+                    <h3>Summary: </h3> <h4>While reading the news, I noticed some sentiments towards sectors such as politics were more negative than other sectors such as technology. I developed a program to conduct sentiment analysis on the news articles and effectively visualize the results.</h4>
+                </div>
+            </div>
+            <div class="incard-project-description">
+                <div class="incard-divider"></div>
+                <div class="incard-reflection">
+                    <h5>Problem </h5>
+                    <br>
+                    <h4>While reading the news one day, I noticed that some topics seem to have more negative articles written about them when compared to others. For example, when reading the politics section of the New York Times, I noticed that there were many more polarizing and negative articles than when compared to a sector such as technology. I wanted to find a way to confirm my suspicions and show this visually while also developing my skills in sentiment analysis and data analytics.</h4>
+                    <br>
+                    <br>
+                    <br>
+                    <h5>First Iteration </h5>
+                    <br>
+                    <h4>I first began by exploring the APIs on the New York Times developer page. I settled on the article search API which I could use to query recent articles from each sector. My goals for this program were:</h4>
+                    <br>
+                    <ol class="incard-olist">
+                        <li>Query the last 50 articles from the NYT API</li>
+                        <li>Clean the data by removing unnecessary characters</li>
+                        <li>Perform sentiment analysis using VADER and NLTK</li>
+                        <li>Use the results to create visuals</li>
+                    </ol>
+                    <br>
+                    <h5>Challenges</h5>
+                    <br>
+                    <h4>Choosing what part of the articles and how to clean the articles proved to be the hardest part of this project. Initially I was going to choose the title of the articles, however, I realized that the title of an article doesn’t always accurately represent the content of the article. I then found that the NYT API has a query where I can retrieve a short description of each of the articles. This provided a concise way to grab the overall sentiment of the article, without having to parse through entire articles.</h4>
+                    <br>
+                    <br>
+                    <h4>Cleaning this data was a great learning experience for me since it taught me about the concept of tokenization in NLTK terms. I had to learn how to break down the summary into “tokens” which were then understood by the VADER model. I learned about how tokens could be constructed by words, numbers, and punctuation; I also learned about how these tokens influenced the results of the VADER model in different ways.</h4>
+                    <br>
+                    <br>
+                    <h4>Lastly, I had to graph the results from the output of the VADER model, which gave me four scores for each article: negative, positive, neutral, and compound. The compound score is supposed to represent the overall sentiment of the article. I plotted the compound score for each article and ended up with the following graphs for technology, business, politics, and climate:</h4>
+                    <br>
+                    <div class="sentiment-analysis-graph-container">
+                        <img src="../imgs/CompoundScoresTechnology.png" alt="Sentiments of Technology Sector Graph" class="sentiment-analysis-graph">
+                        <img src="../imgs/CompoundScoresBusiness.png" alt="Sentiments of Business Sector Graph" class="sentiment-analysis-graph">
+                        <img src="../imgs/CompoundScoresPolitics.png" alt="Sentiments of Politics Sector Graph" class="sentiment-analysis-graph">
+                        <img src="../imgs/CompoundScoresClimate.png" alt="Sentiments of Climate Sector Graph" class="sentiment-analysis-graph">
+                    </div>
+                    <br>
+                    <h4>A score closer to -1 indicates a more negative article while a score closer to 1 indicates a more positive article. Articles around 0 are more neutral articles. These graphs overall make some sense since there does seem to be more polarized and negative articles in politics and climate, whereas technology and business overall seemed to have more of a positive outlook when looking through some of the articles that were being analyzed. However, there did seem to be a skew towards the extremes.</h4>
+                    <br>
+                    <br>
+                    <h4>When investigating this problem I noticed that articles with a high neutral score had a compound rating closer to the extremes of -1 and 1 as opposed to a score closer to 0. I looked at the formulas used to calculate the compound score and realized that the way it aggregated the data led to a more extreme sentiment overall. However, I wanted to investigate how the graphs would change given we only looked at the positive and negative sentiments, omitting the neutral sentiment. Thus I decided to graph the y axis with the formula: (positive score - negative score).</h4>
+                    <br>
+                    <br>
+                    <h4>The result yielded the graphs below:</h4>
+                    <br>
+                    <div class="sentiment-analysis-graph-container">
+                        <img src="../imgs/FormulaTechnology.png" alt="Sentiments of Technology Sector Graph" class="sentiment-analysis-graph">
+                        <img src="../imgs/FormulaBusiness.png" alt="Sentiments of Business Sector Graph" class="sentiment-analysis-graph">
+                        <img src="../imgs/FormulaPolitics.png" alt="Sentiments of Politics Sector Graph" class="sentiment-analysis-graph">
+                        <img src="../imgs/FormulaClimate.png" alt="Sentiments of Climate Sector Graph" class="sentiment-analysis-graph">
+                    </div>
+                    <br>
+                    <h5>Final Analysis</h5>
+                    <br>
+                    <h4>I found these results interesting since the sentiment of each article wasn’t as extreme. This showed to me that there weren’t many articles that were totally positive or totally negative, many of them had a combination of positive and negative sentiment or a high amount of neutral words. Overall, I think both graphs are useful, but the compound scores show a greater disparity towards the sentiment of each topic. For example, in the compound scores graph, there were 14/50 (28%) articles labeled as negative in technology while there were 19/50 (38%) articles labeled as negative in climate. This solved my original question of if some topics receive more negative sentiment overall. I do find it interesting how these sentiments change over time. One extension of this project could be to monitor how these graphs change over time which could reveal how sentiments towards specific sectors also change over time.</h4>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="left-nav-links">
+                <a href="../index.html" class="navbar-tags">JONATHAN KIM</a>
+            </div>
+            <div class="right-nav-links">
+                <a href="../index.html#experience-title" class="navbar-tags">EXPERIENCE</a>
+                <a href="../index.html#project-title" class="navbar-tags">PROJECTS</a>
+                <a href="../index.html#about-target" class="navbar-tags">ABOUT</a>
+                <a href="../imgs/JonathanKimResume.pdf" class="navbar-tags" target="_blank">RESUME</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="incard-pic-and-summary">
+                <div class="incard-pic">
+                    <img src="../imgs/ChessLogo.webp" alt="Chess Logo" class="incard-picture">
+                </div>
+                <div class="incard-summary">
+                    <h2>Chess Assistent Analyzer Bot</h2>
+                    <h3>Title: </h3> <h4>Python Developer</h4>
+                    <br>
+                    <h3>Date: </h3> <h4>Summer 2023</h4>
+                    <br>
+                    <h3>Skills: </h3> <h4>Python, Statistics, Tkinter, GUI Development</h4>
+                    <br>
+                    <br>
+                    <h3>Summary: </h3> <h4>During the Summer of 2023, I competed in many chess tournaments. I wanted to find a way to use coding to assist in my training. I built a bot which analyzed all of the games I had played online and pointed out the biggest weaknesses in my play.</h4>
+                </div>
+            </div>
+            <div class="incard-project-description">
+                <div class="incard-divider"></div>
+                <div class="incard-reflection">
+                    <h5>Problem</h5>
+                    <br>
+                    <h4>When preparing for chess tournaments, a common approach is to prepare "openings": the first moves of a chess game. Openings are one of the few areas of chess in which players are able to memorize specific optimal moves under heavy computer analysis. It is important to analyze all possible responses to your first few opening moves. However, as I have played thousands of games online, it is hard to identify which specific openings I should study the most. I wanted to employ my coding skills in order to optimize my training for the tournaments.</h4>
+                    <br>
+                    <br>
+                    <br>
+                    <h5>First Iteration </h5>
+                    <br>
+                    <h4>I began by sketching out an idea of what I wanted in my program:</h4>
+                    <br>
+                    <ol class="incard-olist">
+                        <li>Users should be able to import a file containing all of their online games</li>
+                        <li>Program should be able to read these games and process how many times each opening was played</li>
+                        <li>Program should be able to read wins vs. losses</li>
+                        <li>Create a system/method to determine the strongest and weakest openings which the user</li>
+                        <li>Display the strongest and weakest openings in a popup window along with some way of displaying the output</li>
+                    </ol>
+                    <br>
+                    <h5>Challenges</h5>
+                    <br>
+                    <h4>As I began putting my ideas into code, I ran into many challenges. There were some minor challenges which included reading in the text file and determining the opening and outcome of each game. I solved these by creating a dictionary containing all of the openings along with the amount of wins, draws, and losses. </h4>
+                    <br>
+                    <br>
+                    <h4>The first major challenge I encountered was determining which openings were considered the “strongest” and which openings were considered the “weakest”. After some testing and simulations, I developed an equation to determine the “impact factor” of a game. </h4>
+                    <br>
+                    <br>
+                    <h4>impact factor = number of games * (win rate - 0.5)</h4>
+                    <br>
+                    <h4>number of games = number of losses + the number of wins + (0.5 * number of draws)</h4>
+                    <br>
+                    <h4>win rate = number of wins / (number of losses + number of wins)</h4>
+                    <br>
+                    <br>
+                    <br>
+                    <h5>Explanation For Impact Factor Equation</h5>
+                    <br>
+                    <h4>I decided on this equation by first deciding the variables which were most important from the data. The two variables that made sense to use were the amount of games played in the opening, and the win rate of the opening.</h4>
+                    <br>
+                    <br>
+                    <ul>
+                        <li>
+                            Number of games
+                            <ul>
+                                <li>Without factoring in the number of games and only focusing on win rate, openings which had only been played a few times were prioritized over openings which have been played hundreds of times. It would make more sense for a players’ strongest opening to be the one which had hundreds of wins than another which only had a couple.</li>
+                            </ul>
+                        </li>
+                        <li>Win rate
+                            <ul>
+                                <li>Without factoring in win rate, we have no way of assessing the strength of the user in the opening because we don’t know how successful they are.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <br>
+                    <br>
+                    <h4>Now that the need for both variables has been established, it is important to understand how each variable is calculated.</h4>
+                    <br>
+                    <br>
+                    <ul>
+                        <li>
+                            Number of games
+                            <ul>
+                                <li>The number of games was defined as the number of losses + the number of wins + (0.5 * number of draws) I wanted to give draws half the amount of weighting as the wins and losses since in traditional chess scoring systems, they are worth half of a point. Draws matter, but they are not weighted as heavily as wins and losses since they are a neutral outcome.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Win rate
+                            <ul>
+                                <li>The win rate was calculated as the number of wins / (number of losses + number of wins). Draws are not included in this equation since they are neutral and cancel themselves out. Of the decisive results, a simple win percentage was calculated.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <br>
+                    <br>
+                    <h4>With these two variables, the impact factor was calculated through the equation:</h4>
+                    <br>
+                    <br>
+                    <h4>Impact factor = number of games * (win rate - 0.5)</h4>
+                    <br>
+                    <br>
+                    <h4>By subtracting the win rate by 0.5, any win rates below 50% will make the impact factor negative and any win rates above 50% will make the impact factor positive. As a result, impact factors which are the most positive show the strongest openings and impact factors which are the most negative show the user’s weakest openings.</h4>
+                    <br>
+                    <br>
+                    <br>
+                    <h5>Final Product</h5>
+                    <br>
+                    <h4>After developing a simple interactive GUI, I created a program where the user could upload their file containing all of their chess games, pick which color they played as, and the amount of moves they want analyzed in the opening. After submitting these inputs, I created a separate popup window which displayed a chessboard along with buttons containing the five strongest and five weakest openings. The user can click on each button and the chessboard will play an animation of that opening. As a result, the user can identify and study their weakest openings in order to become a better chess players. They can also identify which openings they are best at which are best to play as a result.</h4>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
