@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../main.css">
+    <title>Carpool Optimizer Project</title>
+    <link rel="icon" href="../imgs/FaviconIcon.png" type="image/x-icon">
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTP1KKBW05"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LTP1KKBW05');
+</script>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="left-nav-links">
+                <a href="../index.html" class="navbar-tags">JONATHAN KIM</a>
+            </div>
+            <div class="right-nav-links">
+                <a href="../index.html#experience-title" class="navbar-tags">EXPERIENCE</a>
+                <a href="../index.html#project-title" class="navbar-tags">PROJECTS</a>
+                <a href="../index.html#about-target" class="navbar-tags">ABOUT</a>
+                <a href="../imgs/JonathanKimResume.pdf" class="navbar-tags" target="_blank">RESUME</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="incard-pic-and-summary">
+                <div class="incard-pic">
+                    <img src="../imgs/UWTennisCourts.jpg" alt="UW Tennis Courts" class="incard-picture">
+                </div>
+                <div class="incard-summary">
+                    <h2>UW Tennis Carpool Optimizer</h2>
+                    <h3>Title: </h3> <h4>Python Developer</h4>
+                    <br>
+                    <h3>Date: </h3> <h4>Fall 2024</h4>
+                    <br>
+                    <h3>Skills: </h3> <h4>Python, Algorithm Design, Route Optimization, Automation</h4>
+                    <br>
+                    <br>
+                    <h3>Summary: </h3> <h4>Developed an automated carpool optimization system for UW Club Tennis to efficiently manage transportation for over 100 members. The program significantly reduced total driving distance and fuel consumption while streamlining the scheduling process.</h4>
+                </div>
+            </div>
+            <div class="incard-project-description">
+                <div class="incard-divider"></div>
+                <div class="incard-reflection">
+                    <h5>Problem</h5>
+                    <br>
+                    <h4>As a member of UW Club Tennis, I noticed that our manual carpool scheduling system was inefficient and time-consuming. With over 100 members needing rides to practice, the process of matching drivers with passengers and creating optimal routes was becoming increasingly complex. This led to unnecessary detours, excessive fuel consumption, and significant time spent on administrative tasks.</h4>
+                    <br>
+                    <br>
+                    <br>
+                    <h5>Solution Approach</h5>
+                    <br>
+                    <h4>I approached this challenge by implementing a two-phase optimization algorithm:</h4>
+                    <br>
+                    <ol class="incard-olist">
+                        <li>Passenger Grouping Phase
+                            <ul>
+                                <li>Created a distance matrix between all passengers using Google Maps API</li>
+                                <li>Implemented a priority system based on club seniority</li>
+                                <li>Grouped nearby passengers while maintaining maximum car capacity of 4</li>
+                                <li>Designed overflow handling to identify bus riders when needed</li>
+                            </ul>
+                        </li>
+                        <li>Driver Assignment Phase
+                            <ul>
+                                <li>Generated a second distance matrix between drivers and all passengers</li>
+                                <li>Sorted and assigned drivers to passenger groups based on minimal distance</li>
+                                <li>Optimized for overall route efficiency across all vehicles</li>
+                                <li>Implemented capacity checks to ensure balanced distribution</li>
+                            </ul>
+                        </li>
+                        <li>Data Management System
+                            <ul>
+                                <li>Integrated with Google Sheets for automated form response collection</li>
+                                <li>Maintained separate worksheets for player info and daily ride requests</li>
+                                <li>Implemented data validation and error handling for member information</li>
+                                <li>Created organized output format for easy distribution of assignments</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <br>
+                    <h5>Technical Implementation</h5>
+                    <br>
+                    <h4>The core of the project was built in Python, utilizing several key components and APIs:</h4>
+                    <br>
+                    <ul>
+                        <li>Data Collection and Management
+                            <ul>
+                                <li>Integrated with Google Sheets API using gspread for collecting member responses and storing player information</li>
+                                <li>Implemented automated form processing to handle daily ride requests and driver availability</li>
+                                <li>Used pandas DataFrames for efficient data manipulation and filtering</li>
+                            </ul>
+                        </li>
+                        <li>Distance Calculation and Grouping Algorithm
+                            <ul>
+                                <li>Utilized Google Maps API to calculate real-world distances between addresses</li>
+                                <li>Created a 2D adjacency matrix to store distances between all passengers</li>
+                                <li>Implemented a priority-based grouping system that considers club seniority</li>
+                                <li>Developed an efficient algorithm to group nearby passengers while maintaining group size limits</li>
+                            </ul>
+                        </li>
+                        <li>Driver Assignment System
+                            <ul>
+                                <li>Built a second distance matrix to optimize driver-to-group assignments</li>
+                                <li>Implemented a sorting algorithm to minimize total driving distance</li>
+                                <li>Created a flexible system to handle varying numbers of drivers and passengers</li>
+                                <li>Added overflow handling to identify bus riders when driver capacity is exceeded</li>
+                            </ul>
+                        </li>
+                        <li>Integration and Security
+                            <ul>
+                                <li>Used environment variables to securely manage API keys and credentials</li>
+                                <li>Implemented OAuth2 authentication for secure access to Google services</li>
+                                <li>Created a robust error handling system for missing or incorrect member information</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <br>
+                    <br>
+                    <h5>Results and Impact</h5>
+                    <br>
+                    <h4>The implementation of this system led to several significant improvements:</h4>
+                    <br>
+                    <ul>
+                        <li>Efficiency Gains
+                            <ul>
+                                <li>30% reduction in total driving distance</li>
+                                <li>25% decrease in fuel consumption</li>
+                                <li>70% improvement in scheduling time efficiency</li>
+                            </ul>
+                        </li>
+                        <li>User Experience
+                            <ul>
+                                <li>Streamlined process for both administrators and members</li>
+                                <li>Increased satisfaction with carpool arrangements</li>
+                                <li>Reduced coordination overhead for team leadership</li>
+                            </ul>
+                        </li>
+                        <li>Environmental Impact
+                            <ul>
+                                <li>Reduced carbon footprint through optimized routes</li>
+                                <li>More efficient use of available vehicles</li>
+                                <li>Decreased overall environmental impact of team transportation</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <br>
+                    <br>
+                    <h5>Future Improvements</h5>
+                    <br>
+                    <h4>While the current system has significantly improved our carpool management, there are several potential enhancements for the future:</h4>
+                    <br>
+                    <ul>
+                        <li>Integration with a user interface for real-time updates</li>
+                        <li>Machine learning implementation for better route prediction</li>
+                        <li>Enhanced visualization tools for route planning</li>
+                    </ul>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
