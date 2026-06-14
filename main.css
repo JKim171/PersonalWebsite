@@ -389,3 +389,191 @@ ul li {
 .sentiment-analysis-graph {
     padding: 30px;
 }
+
+@media (max-width: 768px) {
+    .navbar {
+        height: 70px;
+    }
+
+    .left-nav-links,
+    .right-nav-links {
+        margin: 20px;
+    }
+
+    .right-nav-links {
+        gap: 20px;
+    }
+
+    .navbar-tags {
+        font-size: 12pt;
+    }
+
+    .content {
+        max-width: 90%;
+    }
+
+    .header {
+        font-size: 22px;
+        margin-top: 140px;
+        margin-bottom: 60px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    h5 {
+        font-size: 24px;
+    }
+
+    ul li {
+        font-size: 18px;
+    }
+
+    .title {
+        font-size: 20px;
+        padding-top: 60px;
+    }
+
+    .card {
+        padding: 20px;
+        gap: 16px;
+        margin: 24px 0;
+    }
+
+    .left-pic-container {
+        flex: 1 1 100%;
+        min-width: 0;
+        max-height: 200px;
+        margin-right: 0;
+    }
+
+    .right-text {
+        width: 100%;
+    }
+
+    .project-name {
+        font-size: 24px;
+    }
+
+    .description {
+        font-size: 18px;
+    }
+
+    .tags {
+        font-size: 14px;
+        min-width: 70px;
+        margin-right: 8px;
+    }
+
+    .divider {
+        margin-top: 60px;
+    }
+
+    .about {
+        flex-direction: column;
+        height: auto;
+        margin-top: 40px;
+        margin-bottom: 60px;
+        padding: 0;
+    }
+
+    .about-text {
+        width: 100%;
+        padding: 16px 0;
+    }
+
+    .about-description {
+        font-size: 18px;
+    }
+
+    .self-pic {
+        width: 100%;
+    }
+
+    .incard-pic-and-summary {
+        flex-direction: column;
+        height: auto;
+        margin-top: 100px;
+        padding: 0;
+    }
+
+    .incard-pic {
+        flex: 0 0 auto;
+        max-height: 260px;
+        padding: 0 0 20px 0;
+    }
+
+    .incard-summary {
+        margin-left: 0;
+    }
+
+    .incard-project-description {
+        width: 100%;
+    }
+
+    .incard-reflection {
+        height: auto;
+        padding: 16px 0;
+    }
+
+    .incard-olist {
+        font-size: 18px;
+        padding-left: 24px;
+    }
+
+    .incard-project-description {
+        word-wrap: break-word;
+    }
+
+    .sentiment-analysis-graph {
+        padding: 10px 0;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .left-nav-links,
+    .right-nav-links {
+        margin: 14px;
+    }
+
+    .right-nav-links {
+        gap: 14px;
+    }
+
+    .navbar-tags {
+        font-size: 11pt;
+        letter-spacing: 0.5px;
+    }
+
+    .header {
+        font-size: 20px;
+        margin-top: 120px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .project-name {
+        font-size: 22px;
+    }
+}
